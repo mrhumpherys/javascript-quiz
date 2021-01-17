@@ -1,57 +1,31 @@
-var startButtonEl = document.querySelector("#start-button");
-var introContainerEl = document.querySelector("#intro-container");
-var titleEl = document.querySelector("#title");
-var introEl = document.querySelector("#intro");
-var questionContainerEl = document.getElementById("question-container")
-var questionEl = document.getElementById("question");
-let timerEl = document.getElementById("timer");
-var time = 75;
+var startButtonEl = document.getElementById("startButton");
+var welcomeMessageEl = document.getElementById("welcomeMessage");
+var qContainerEl = document.getElementById("questionsContainer");
+var qElement = document.getElementById("question");
+var answerButtonsEl = document.getElementById("answers");
+var countdownEl = document.getElementById("timerArea");
+var scoreAreaEl = document.getElementById("scoreArea");
+var highScoresButtonEl = document.getElementById("showScoresButton");
 
+var timer = 75;
+var runningTimer;
+var score = 0;
+var username = "";
+var qNumber;
+var finalScore;
+const MAX_HIGH_SCORES = 7;
 
+startButtonEl.addEventListener("click", startGame);
 
-
-
-var startQuiz = function() {
-    removeIntro();
-    timerEl.classList.remove("hidden");
-    var startTimer = setInterval(function() {
-    
-        if (time > 0) {
-            timerEl.textContent = time;
-            time--;
-        } else {
-            timerEl.textContent = "Game Over";
-            clearInterval(startTimer);
-        }
-    }, 1000);
-    questionContainerEl.classList.remove("hidden");
-    questionEl.classList.remove("hidden");
-    addQuestions();
-    
-
-    
-}
-var removeIntro = function () {
-    console.log("You clicked Start!")
-    introContainerEl.className = "hidden";
-    titleEl.className = "hidden";
-    introEl.className = "hidden";
-    introContainerEl.removeChild(startButtonEl);
-    console.log(startButtonEl);
-}
-var addQuestions = function() {
-
-
+function startGame() {
+    startButton.classList.add("hide");
+    welcomeMessage.classList.add("hide");
+    scoreArea.classList.add("hide");
+    answerButtons.classList.remove("hide");
 }
 
 
-
-
-
-
-
-
-var questionsArr = [
+var questions = [
     {
         question: "Commonly used data types DO NOT include:",
         answers: [
@@ -98,4 +72,3 @@ var questionsArr = [
         ]
     }
 ];
-startButtonEl.addEventListener("click", startQuiz);
