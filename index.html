@@ -3,32 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Javascript Quiz</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <header class="header">
-        <div>
-            <a href="">High Scores</a>
-        </div>
-        <div>
-            <h3 class="hidden" id="timer"></h3>
-        </div>
-    </header>
-    <div id="intro-container">
-        <h2 id="title">Coding Quiz Challenge</h2>
-        <p id="intro">Welcome! Try to answer the code related questions within the time limit. Incorrect questions will penalize you by 10 seconds. Good Luck!</p>
-        <button id="start-button" class="btn">Start</button>
-    </div>
-    <div id="question-container" class="hidden">
-        <h2 id="question" class="hidden">Question example heres random text to give me an idea of how to style.Look at this aaaaaaaahhh!</h2>
-        <button id="button1" class="btn hidden">1. Answer</button>
-        <button id="button2" class="btn hidden">1. Answer</button>
-        <button id="button3" class="btn hidden">1. Answer</button>
-        <button id="button4" class="btn hidden">1. Answer</button>
-    </div>
-    
-
+    <main class="quizArea">
+        <header class="mainHeader">
+            <h1>JavaScript Quiz</h1>
+            <h3 id="welcomeMessage">Welcome! Try to answer the code related questions within the time limit. Incorrect questions will penalize you. Good Luck!</h3>
+            <span id="timerArea"></span>
+        </header>
+        <section id="questionsContainer" class="hide">
+            <div id="question"></div>
+            <div id="answers" class="buttonArea"></div>
+        </section>
+        <section class="scores">
+            <div id="scoreArea" class="hide"></div>
+        </section>
+        <section class="controls">
+            <button class="start" id="startButton">START</button>
+            <button class="btn" id="showScoresButton">See High Scores</button>
+            <br />
+            <div id="scoreArea" class="hide">
+              <span id="scoreDisplay"></span>
+              <input type="text" name="initials" id="initials" />
+              <button id="submitScore" class="submit">Submit Score</button>
+            </div>
+        </section>
+    </main>
 
     <script src="assets/script.js"></script>
 </body>
