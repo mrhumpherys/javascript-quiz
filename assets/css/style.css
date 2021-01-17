@@ -28,7 +28,7 @@ h3 {
 .mainHeader {
     padding-bottom: 0.3rem;
     margin-bottom: 1rem;
-    border-bottom: 1px solid grey;
+    border-bottom: 2px solid var(--btn);
 }
 
 .quizArea {
@@ -91,7 +91,7 @@ button:hover {
 
 #scoreArea {
     padding-bottom: 1rem;
-    border-bottom: 1px solid grey;
+    border-bottom: 2px solid var(--btn);
 }
 
 #init {
